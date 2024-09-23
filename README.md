@@ -1,8 +1,8 @@
 # ESP32_Microbit_BLE
-Establish the Bluetooth connection between ESP32 and micro:bit
+Establish the Bluetooth connection between ESP32 and micro:bit.
 Preparation:
 1. Import the microbit-BluetoothTest02.hex(in the /Microbit_Python) in the Microsoft MakeCode (https://makecode.microbit.org), and download the program to the micro:bit board.
-2. Modify the variable *serverBtDeviceName* in the source code according to your own micro:bit board:
+2. Modify the variable *serverBtDeviceName* in the source code according to your own micro:bit board. You can check it in the mobile app (e.g. BLE Scanner):
 serverBtDeviceName="BBC micro:bit [pogiv]";    // It should be modified according to your own board.
 3. Upload the sketch to the ESP32 board(BiBoard) and connect the double-touch sensor to Pins 34 and 35 on the extension hat.
 4. Power on the micro:bit board first
