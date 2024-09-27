@@ -29,5 +29,4 @@ input.on_button_pressed(Button.B, on_button_pressed_b)
 tempMsg = ""
 basic.show_icon(IconNames.NO)
 tempMsg = ""
-bluetooth.set_transmit_power(7)
 bluetooth.start_uart_service()
