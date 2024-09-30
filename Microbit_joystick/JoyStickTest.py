@@ -47,9 +47,9 @@ def on_forever():
         bluetooth.uart_write_string("sit")
     if bigChange(currX, lastX) == 1 or bigChange(currY, lastY) == 1:
         if currX >= 500 and currX <= 550 and (currY >= 500 and currY <= 550):
-            basic.pause(500)
+            basic.pause(800)
             bluetooth.uart_write_string("balance")
-            basic.show_icon(IconNames.HEART)
+            basic.clear_screen()
             basic.pause(200)
         else:
             if currX <= 200:

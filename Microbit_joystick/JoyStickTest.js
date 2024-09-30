@@ -59,9 +59,9 @@ basic.forever(function on_forever() {
     
     if (bigChange(currX, lastX) == 1 || bigChange(currY, lastY) == 1) {
         if (currX >= 500 && currX <= 550 && (currY >= 500 && currY <= 550)) {
-            basic.pause(500)
+            basic.pause(800)
             bluetooth.uartWriteString("balance")
-            basic.showIcon(IconNames.Heart)
+            basic.clearScreen()
             basic.pause(200)
         } else {
             if (currX <= 200) {
