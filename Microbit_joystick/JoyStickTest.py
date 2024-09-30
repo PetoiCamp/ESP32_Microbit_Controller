@@ -28,23 +28,23 @@ def on_forever():
     currX = joystickbit.get_rocker_value(joystickbit.rockerType.X)
     currY = joystickbit.get_rocker_value(joystickbit.rockerType.Y)
     if joystickbit.get_button(joystickbit.JoystickBitPin.P12):
-        basic.show_string("C")
         bluetooth.uart_write_string("crawl")
+        basic.show_string("C")
     if joystickbit.get_button(joystickbit.JoystickBitPin.P13):
-        basic.show_string("D")
         bluetooth.uart_write_string("walk")
+        basic.show_string("W")
     if joystickbit.get_button(joystickbit.JoystickBitPin.P14):
-        basic.show_string("E")
         bluetooth.uart_write_string("trot")
+        basic.show_string("T")
     if joystickbit.get_button(joystickbit.JoystickBitPin.P15):
-        basic.show_string("F")
         bluetooth.uart_write_string("rest")
+        basic.show_string("Rest")
     if input.button_is_pressed(Button.A):
-        basic.show_string("A")
         bluetooth.uart_write_string("hello")
+        basic.show_string("Hi")
     if input.button_is_pressed(Button.B):
-        basic.show_string("B")
         bluetooth.uart_write_string("sit")
+        basic.show_string("Sit")
     if bigChange(currX, lastX) == 1 or bigChange(currY, lastY) == 1:
         if currX >= 500 and currX <= 550 and (currY >= 500 and currY <= 550):
             basic.pause(800)

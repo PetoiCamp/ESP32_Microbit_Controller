@@ -28,33 +28,33 @@ basic.forever(function on_forever() {
     currX = joystickbit.getRockerValue(joystickbit.rockerType.X)
     currY = joystickbit.getRockerValue(joystickbit.rockerType.Y)
     if (joystickbit.getButton(joystickbit.JoystickBitPin.P12)) {
-        basic.showString("C")
         bluetooth.uartWriteString("crawl")
+        basic.showString("C")
     }
     
     if (joystickbit.getButton(joystickbit.JoystickBitPin.P13)) {
-        basic.showString("D")
         bluetooth.uartWriteString("walk")
+        basic.showString("W")
     }
     
     if (joystickbit.getButton(joystickbit.JoystickBitPin.P14)) {
-        basic.showString("E")
         bluetooth.uartWriteString("trot")
+        basic.showString("T")
     }
     
     if (joystickbit.getButton(joystickbit.JoystickBitPin.P15)) {
-        basic.showString("F")
         bluetooth.uartWriteString("rest")
+        basic.showString("Rest")
     }
     
     if (input.buttonIsPressed(Button.A)) {
-        basic.showString("A")
         bluetooth.uartWriteString("hello")
+        basic.showString("Hi")
     }
     
     if (input.buttonIsPressed(Button.B)) {
-        basic.showString("B")
         bluetooth.uartWriteString("sit")
+        basic.showString("Sit")
     }
     
     if (bigChange(currX, lastX) == 1 || bigChange(currY, lastY) == 1) {
