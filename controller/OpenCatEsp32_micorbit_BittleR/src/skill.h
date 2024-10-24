@@ -351,10 +351,10 @@ public:
 
       for (int jointIndex = 0; jointIndex < DOF; jointIndex++) {
         //          PT(jointIndex); PT('\t');
-#ifdef ROBOT_ARM
-        if (abs(period) > 1 && jointIndex == 0)  //don't move the robot arm's joints for gaits
-          jointIndex = 4;
-#endif
+// #ifdef ROBOT_ARM
+//         if (abs(period) > 1 && jointIndex == 0)  //don't move the robot arm's joints for gaits
+//           jointIndex = 4;
+// #endif
 #ifndef HEAD
         if (jointIndex == 0)
           jointIndex = 2;

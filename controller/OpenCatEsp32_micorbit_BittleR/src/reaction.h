@@ -483,6 +483,7 @@ void reaction() {
                 inLen++;
               }
               if ((token == T_INDEXED_SEQUENTIAL_ASC || token == T_INDEXED_SIMULTANEOUS_ASC) && target[0] >= 0 && target[0] < DOF) {
+                PTHL((int8_t)target[0], (int8_t)target[1]);
                 targetFrame[target[0]] = target[1];
                 if (target[0] < 4) {
                   targetHead[target[0]] = target[1];
@@ -655,6 +656,7 @@ void reaction() {
               PTL();
             }
 #endif
+            PTHL(token == T_INDEXED_SEQUENTIAL_ASC || token == T_INDEXED_SIMULTANEOUS_ASC, nonHeadJointQ || lastToken != T_SKILL);
             if ((token == T_INDEXED_SEQUENTIAL_ASC || token == T_INDEXED_SIMULTANEOUS_ASC) && (nonHeadJointQ || lastToken != T_SKILL)) {
               // printToAllPorts(token);
               transform(targetFrame, 1, transformSpeed);  // if (token == T_INDEXED_SEQUENTIAL_ASC) it will be useless
@@ -724,7 +726,13 @@ void reaction() {
             }
             if (nonHeadJointQ || lastToken != T_SKILL) {
               // printToAllPorts(token);
-              transform(targetFrame, 1, transformSpeed);  // if (token == T_INDEXED_SEQUENTIAL_BIN) it will be useless
+              transform(targetFrame, 1,
+// #ifdef ROBOT_ARM
+//                         2
+// #else
+                        transformSpeed
+// #endif
+              );  // if (token == T_INDEXED_SEQUENTIAL_BIN) it will be useless
               skill->convertTargetToPosture(targetFrame);
             }
             // if (token == T_INDEXED_SEQUENTIAL_BIN)
