@@ -81,7 +81,7 @@ String SoftwareVersion = "";
 
 #define BIRTHMARK '@'  // Send '!' token to reset the birthmark in the EEPROM so that the robot will know to restart and reset
 
-// #define BT_BLE    // toggle Bluetooth Low Energy (BLE）
+#define BT_BLE    // toggle Bluetooth Low Energy (BLE）
 #define BT_SSP    // toggle Bluetooth Secure Simple Pairing (BT_SSP)
 #define BT_CLIENT // toggle Bluetooth client (BLE） for Micro:Bit
 #define GYRO_PIN  // toggle the Inertia Measurement Unit (IMU), i.e. the gyroscope

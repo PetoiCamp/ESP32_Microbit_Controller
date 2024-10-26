@@ -1,19 +1,7 @@
 //Generated Date: Fri, 20 Sep 2024 04:06:24 GMT by Jason
 #include <BLEDevice.h>
 
-#define RIGHT "right"
-#define LEFT "left"
-#define FORWARD "forward"
-#define BACK "back"
-#define CRAWL "crawl"
-#define WALK "walk"
-#define TROT "trot"
-#define REST "rest"
-#define BALANCE "balance"
-#define HELLO "hello"
-#define SIT "sit"
-#define PICKUP "pickup"
-#define PUTDOWN "putdown"
+#define DEVICE_NAME "BBC"
 
 #define SERVICE_UUID_STR "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_RX_STR "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
@@ -33,17 +21,14 @@ BLERemoteDescriptor* pRD;
 bool btReceiveDone = false;
 String btRxLoad = "";
 uint8_t dataIndicate[2] = { 0x02, 0x00 };
-String serverBtDeviceName = "";
-String sendTemp = "";
+// String serverBtDeviceName = "";
 
 void bleParser(String raw) {
   String cmd = "";
   token = raw[0];
   strcpy(newCmd, raw.c_str() + 1);
-  // return cmd;
   newCmdIdx = 2;
   cmdLen = strlen(newCmd);
-  PTHL(token, newCmd);
 }
 
 void PetoiBtConnected() {
@@ -126,11 +111,13 @@ bool connectToServer() {
 class PetoiAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
     String tempDeviceName = advertisedDevice.getName().c_str();
-    if (tempDeviceName.equals(serverBtDeviceName)) {
+    //  if (tempDeviceName.equals(serverBtDeviceName)) {
+    if (strstr(advertisedDevice.getName().c_str(), DEVICE_NAME) != NULL) {
       BLEDevice::getScan()->stop();
       PetoiBtDevice = new BLEAdvertisedDevice(advertisedDevice);
       doConnect = true;
       doScan = true;
+      PTHL("Advertised Device found:",tempDeviceName);
     }
   }
 };
@@ -158,14 +145,13 @@ void checkBtScan() {
 
 void bleClientSetup() {
   PTLF("Start...");
-  serverBtDeviceName = "BBC micro:bit [vatip]";  // It should be modified according to your own board.  another one's name: pogiv
+  // serverBtDeviceName = "BBC micro:bit [vatip]";  // It should be modified according to your own board.  another one's name: pogiv
   PetoiBtStartScan();
 }
 
 void readBleClient() {
   checkBtScan();
   if (btConnected && btReceiveDone && btRxLoad.length() > 0) {
-    PTHL("btRxLoad", btRxLoad);
     bleParser(btRxLoad);
     btRxLoad = "";
   }

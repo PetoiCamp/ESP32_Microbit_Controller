@@ -35,8 +35,8 @@ void calibratedPWM(byte i, float angle, float speedRatio = 0) {
   }
 #ifdef ROBOT_ARM
   if (actualServoIndex == 2 && currentAng[2] == 0 && !pincerClosedQ) {
-    shutServos(2);         //release the power on the pincer to avoid stuck
-    pincerClosedQ = true; 
+    shutServos(2);  //release the power on the pincer to avoid stuck
+    pincerClosedQ = true;
   }
 #endif
 }
@@ -277,7 +277,7 @@ float adaptiveParameterArray[][NUM_ADAPT_PARAM] = {
 };
 #else  // >> leg
 float adaptiveParameterArray[][NUM_ADAPT_PARAM] = {
-  { -panF / 2, 0 }, { panF / 3, -tiltF }, { 0, -1 * tiltF }, { -1 * panF, 0 }, { sRF, -sPF }, { -sRF, -sPF }, { -sRF, sPF }, { sRF, sPF }, { uRF, uPF }, { uRF, uPF }, { uRF, uPF }, { uRF, uPF }, { lRF, -0.5 * lPF }, { lRF, -0.5 * lPF }, { lRF, 0.5 * lPF }, { lRF, 0.5 * lPF }
+  { -panF / 2, 0 }, { panF / 8, -tiltF / 3 }, { 0, 0 }, { -1 * panF, 0 }, { sRF, -sPF }, { -sRF, -sPF }, { -sRF, sPF }, { sRF, sPF }, { uRF, uPF }, { uRF, uPF }, { uRF, uPF }, { uRF, uPF }, { lRF, -0.5 * lPF }, { lRF, -0.5 * lPF }, { lRF, 0.5 * lPF }, { lRF, 0.5 * lPF }
 };
 #endif
 
@@ -308,7 +308,11 @@ float adjust(byte i) {
 #else
   currentAdjust[i] = idealAdjust;
 #endif
-  currentAdjust[i] = max(float(-75), min(float(75), currentAdjust[i]));
+  currentAdjust[i] = max(float(-45), min(float(45), currentAdjust[i]));
+  // if (i == 1) {
+  //   PTHL(currentAdjust[0], currentAdjust[1]);
+  //   delay(100);
+  // }
   return currentAdjust[i];
 }
 
