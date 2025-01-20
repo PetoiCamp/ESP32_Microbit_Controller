@@ -19,7 +19,7 @@ Click the picture to open the YouTube demo.
 
 ## Installation
 
-The codes in the sub-folders are intermediate test codes during R&D. You only need to use microbit-JoyStick.hex for the formal functionality. 
+The codes in the sub-folders are intermediate test codes during R&D. You only need to use **microbit-JoyStick.hex** for the formal functionality. 
 
 1. Import the microbit-JoyStick.hex on the Microsoft MakeCode (https://makecode.microbit.org) site, and download the program to the Micro: Bit board.
 2. Upload the latest OpenCatEsp32 firmware to the (BiBoard).
