@@ -1,20 +1,18 @@
 # ESP32_Microbit_BLE
-Establish the Bluetooth connection between ESP32 and micro:bit.
-Preparation:
-1. Import the microbit-BluetoothTest02.hex(in the /Microbit_Python) in the Microsoft MakeCode (https://makecode.microbit.org), and download the program to the micro:bit board.
-2. Modify the variable *serverBtDeviceName* in the source code(/ESP_BLE_Test02/ESP_BLE_Test02.ino) according to your own micro:bit board.
-You can check it in the mobile app (e.g. BLE Scanner):
-serverBtDeviceName="BBC micro:bit [pogiv]";    // It should be modified according to your own board.
-4. Upload the sketch to the ESP32 board(BiBoard) and connect the double-touch sensor to Pins 34 and 35 on the extension hat.
-5. Power on the micro:bit board first
-6. Power on the BiBoard by battery and connect it to the computer with a USB type-C data cable, then open the serial monitor.
+Establish the Bluetooth connection between ESP32 and Micro:Bit.
 
-After the ico on micro:bit board change to ![image](https://github.com/user-attachments/assets/e7946543-c4f3-45f8-a179-c942b8335558), it means the BLE is connected successfully between the  micro:bit board and BiBoard.
+The codes in the sub-folders are intemediate test codes during R&D. You only need to use microbit-JoyStick.hex for the formal functionality. 
 
-When you touch one side of the touch sensor, the icon Heart appears on the micro:bit board; touching the other side of the touch sensor clears the icon Heart.
+1. Import the microbit-JoyStick.hex on the Microsoft MakeCode (https://makecode.microbit.org) site, and download the program to the micro:bit board.
 
-If you press the B button on the micro:bit board. In the serial monitor, the *photoIndex* value will be printed, and it'll be increased from the current value(default value is 1) to 9;
+2. Upload the latest OpenCatEsp32 firmware to the (BiBoard).
 
-If you press the A button on the micro:bit board. In the serial monitor will print the *photoIndex* value, which will be decreased from its current value to 1.
+3. Power on the micro:Bit board first.
+
+4. Power on the Petoi robot.
+
+The Micro:Bit will show ![image](https://github.com/user-attachments/assets/e7946543-c4f3-45f8-a179-c942b8335558), it means the BLE is connected successfully between the Micro:Bit board and BiBoard.
+
+It will play a connection sound and display N for Nybble, B for Bittle, and R for Bittle R (with the robot arm).
 
 
