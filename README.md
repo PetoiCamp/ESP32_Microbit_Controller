@@ -32,6 +32,8 @@ The Micro: Bit will show ![image](https://github.com/user-attachments/assets/e79
 It will play a connection sound and display N for Nybble, B for Bittle, and R for Bittle R (with the robot arm).
 
 ## Button layout
+![](https://github.com/PetoiCamp/NonCodeFiles/blob/209e80b42aaad9011e9f6286b3bfb2ce2d14585b/img/Joystick_BittleR.png)
+
 ```
               Touch       D
                 
@@ -68,13 +70,13 @@ The joystick needs 300 milliseconds to separate a double push event, causing the
 A single-button behavior could be triggered before the combination key.
 When controlling the switch, there may be no response if the buttons are pressed too quickly.
 
+## STL for Frosted LED Diffuser Cover for Micro: Bit
+[![Frosted LED Diffuser Cover for Micro: Bit](https://github.com/PetoiCamp/NonCodeFiles/blob/afc51030f50540144f1c7ad6b9c12ecaffc0ed65/img/FrostedLedDiffuserMicroBit.png)](https://makerworld.com/en/models/756956#profileId-691309)
+
 Rongzhong Li
 
 Petoi LLC
 
 Jan. 20, 2025
-
-## STL for Frosted LED Diffuser Cover for Micro: Bit
-[![Frosted LED Diffuser Cover for Micro: Bit](https://github.com/PetoiCamp/NonCodeFiles/blob/afc51030f50540144f1c7ad6b9c12ecaffc0ed65/img/FrostedLedDiffuserMicroBit.png)](https://makerworld.com/en/models/756956#profileId-691309)
 
 
