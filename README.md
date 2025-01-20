@@ -1,4 +1,5 @@
 # Petoi Micro: Bit Remote Controller
+
 Bluetooth automatically connects the Micro: Bit controller to Petoi robots with BiBoard (ESP32). First-come-first-serve.
 
 It supports three models of robots:
@@ -11,7 +12,12 @@ Upgrading the robot to the latest firmware (after Dec.2024) is required.
 
 Click the GIF to open the YouTube demo.
 
-# Installation
+[![Demo in action](https://github.com/PetoiCamp/NonCodeFiles/blob/7891a7aaaa65be7f1bc852528f36f37ceb62ce02/img/joystickGame.png)](https://youtu.be/xYmtNn0ri14)
+
+Click the picture to open the YouTube demo.
+
+
+## Installation
 
 The codes in the sub-folders are intermediate test codes during R&D. You only need to use microbit-JoyStick.hex for the formal functionality. 
 
@@ -25,7 +31,7 @@ The Micro: Bit will show ![image](https://github.com/user-attachments/assets/e79
 
 It will play a connection sound and display N for Nybble, B for Bittle, and R for Bittle R (with the robot arm).
 
-# Button layout
+## Button layout
 ```
               Touch       D
                 
@@ -42,22 +48,22 @@ Pin:                                  12     13     14      15
 ```
 Touch is the logo in the middle. A and B are the Micro: Bit's built-in buttons.
     
-# Instruction
-## Joystick (left) alone: 
+## Instruction
+### Joystick (left) alone: 
 Controls the robot's walking direction: forward, backward, left, right, and diagonally.             
                       pushing the joystick full left/right turn rotation at the origin
                       Pushing forward twice quickly triggers fast forward.
-## Single and double buttons: 
+### Single and double buttons: 
 Their functions correspond to the array **keyCmd**. Users can modify the instructions for specific robot types and corresponding buttons. 
                           Currently, only A+B, C+E, D+F, and E+F are used for double-button combinations. 
                           Users can add other combinations like A+F, B+D, etc., but these combinations may be inconvenient to press.
-## Button + joystick: 
+### Button + joystick: 
 Pressing and holding a button and then moving the joystick can specify its direction.
                    The default direction is random by a single click and release.
 
 Different models will have slightly different key mapping. 
 
-Limitations:
+## Limitations:
 The joystick needs 300 milliseconds to separate a double push event, causing the button + joystick forward action to respond slowly.
 A single-button behavior could be triggered before the combination key.
 When controlling the switch, there may be no response if the buttons are pressed too quickly.
@@ -67,5 +73,8 @@ Rongzhong Li
 Petoi LLC
 
 Jan. 20, 2025
+
+## STL for Frosted LED Diffuser Cover for Micro: Bit
+[![Frosted LED Diffuser Cover for Micro: Bit](https://github.com/PetoiCamp/NonCodeFiles/blob/afc51030f50540144f1c7ad6b9c12ecaffc0ed65/img/FrostedLedDiffuserMicroBit.png)](https://makerworld.com/en/models/756956#profileId-691309)
 
 
