@@ -32,7 +32,6 @@ The Micro: Bit will show ![image](https://github.com/user-attachments/assets/e79
 It will play a connection sound and display N for Nybble, B for Bittle, and R for Bittle R (with the robot arm).
 
 ## Button layout
-![](https://github.com/PetoiCamp/NonCodeFiles/blob/209e80b42aaad9011e9f6286b3bfb2ce2d14585b/img/Joystick_BittleR.png)
 
 ```
               Touch       D
@@ -51,6 +50,9 @@ Pin:                                  12     13     14      15
 Touch is the logo in the middle. A and B are the Micro: Bit's built-in buttons.
     
 ## Instruction
+![BittleJoystick](https://github.com/user-attachments/assets/674787c0-1f16-4f60-a514-21ae1a61ff14)
+![BittleR Joystick](https://github.com/user-attachments/assets/00f33c14-1aea-49b5-8fda-8ae5a144bf61)
+![NybbleJoystick](https://github.com/user-attachments/assets/b78a2e31-f199-42bb-ac75-3342a59c2dc5)
 ### Joystick (left) alone: 
 Controls the robot's walking direction: forward, backward, left, right, and diagonally.             
                       pushing the joystick full left/right turn rotation at the origin
